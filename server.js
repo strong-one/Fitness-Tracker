@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const PORT = process.env.PORT || 3000;
 
 const Training = require("./models"); // access to models
+const { db } = require("./models/training");
 const app = express();
 
 app.use(logger("dev"));
@@ -18,17 +19,17 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/onlygainz", {
   useNewUrlParser: true,
 });
 
-// routes go below
+// routes
+
 // CRUD operations
-// db.Library.create({ name: "Only Gainz" }) // when server runs it automatically creates database
+
+// db.Onlygainz.create({ name: "Only Gainz" }) // when server runs it automatically creates database
 //   .then((onlyGainz) => {
 //     console.log(onlyGainz);
 //   })
 //   .catch(({ message }) => {
 //     console.log(message);
 //   });
-
-// routes go above
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
