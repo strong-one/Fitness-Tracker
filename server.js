@@ -4,8 +4,8 @@ const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 3000;
 
-const Training = require("./models"); // access to models
-const { db } = require("./models/training");
+// const db = require("./models");
+
 const app = express();
 
 app.use(logger("dev"));
@@ -15,21 +15,14 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/onlygainz", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
   useNewUrlParser: true,
+  useFindAndModify: false,
+  useUnifiedTopology: true,
 });
 
-// routes
-
-// CRUD operations
-
-// db.Onlygainz.create({ name: "Only Gainz" }) // when server runs it automatically creates database
-//   .then((onlyGainz) => {
-//     console.log(onlyGainz);
-//   })
-//   .catch(({ message }) => {
-//     console.log(message);
-//   });
+app.use(require("./userroutes/html-routes"));
+// app.use(require("./userroutes/api-routes"));
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);

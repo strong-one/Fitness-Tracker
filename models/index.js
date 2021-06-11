@@ -2,5 +2,5 @@
 
 // not needed when working with only one model
 module.exports = {
-  Training: require("./training"),
+  Workout: require("./workout"),
 };
