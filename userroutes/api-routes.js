@@ -42,6 +42,7 @@ router.get("/api/workouts", (req, res) => {
 });
 
 router.get("/api/workouts/range", (req, res) => {
+  // Aggregation operations process data records and return computed results -- can perform a variety of operations on the grouped data to return a single result
   Workout.aggregate([
     {
       $addFields: {
@@ -51,6 +52,7 @@ router.get("/api/workouts/range", (req, res) => {
       },
     },
   ])
+    // limiting the day to 7
     .limit(7)
     // decending order
     .sort({ _id: -1 })
