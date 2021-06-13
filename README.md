@@ -1,5 +1,9 @@
 # Strong-Fitness-Tracker
 
+![screenshot](assets/screenshot.jpeg)
+
+[Link to deployed site](https://guarded-scrubland-83578.herokuapp.com/?id=60c574f18c9bf00015247221)
+
 ## Description
 
 If you are brand new to the gym or an experienced competitor. Tracking your progress throughout your fitness journey can be very beneficial. You want to see how far you've come and have a refrence point to see where improvement is needed. This app will track your training sessions by whatever your training plan is.
