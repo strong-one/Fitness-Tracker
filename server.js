@@ -13,10 +13,17 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
+//   useNewUrlParser: true,
+//   useFindAndModify: false,
+//   useUnifiedTopology: true,
+// });
+
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
   useNewUrlParser: true,
-  useFindAndModify: false,
   useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
 });
 
 app.use(require("./userroutes/html-routes"));
